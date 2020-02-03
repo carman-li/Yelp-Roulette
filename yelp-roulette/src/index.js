@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import "./index.css";
 import InputField from "./InputField";
-import Display from "./Display"
+// import Display from "./Display"
 
 ReactDOM.render(
     <div className="container-fluid">
@@ -12,7 +12,7 @@ ReactDOM.render(
                 <InputField />
             </div>
             <div className="col right">
-                <Display />
+                {/* <Display /> */}
             </div>
         </div>
     </div>

@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 
-class Display extends Component {
+class DisplayCard extends Component {
     constructor(props) {
         super(props);
 
@@ -15,4 +15,4 @@ class Display extends Component {
     }
 }
 
-export default Display:
+export default DisplayCard;
