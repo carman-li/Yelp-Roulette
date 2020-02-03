@@ -1,0 +1,79 @@
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  color: white;
+}
+
+.row {
+  width: 100%;
+  height: 100%;
+}
+
+.col {
+  height: 100vh;
+  width: 100vw;
+  padding: 5vw;
+}
+
+.left {
+  text-align: center;
+  background-color: #A8D0E6;
+}
+
+.right {
+  background-color: #24305E;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+h1 {
+  font-weight: 700;
+  margin-bottom: 5vh;
+}
+
+h3 {
+  font-weight: 400;
+  font-size: 1.5vw;
+  word-wrap: break-word;
+}
+
+input {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+
+  margin: 0.5em;
+}
+
+.field{
+  border-radius: 4px;
+  position: relative;
+  background-color: transparent;
+  border: 2px solid white;
+}
+
+.button {
+  border-radius: 4px;
+  position: relative;
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
+  padding-left: 6px;
+  padding-right: 6px;
+  font-weight: 600;
+}
+
+.field:hover, .field:focus {
+  border: 2px solid #24305E;
+  outline: none;
+}
+
+.button:hover, .button:focus {
+  border: 2px solid #24305E;
+  color: #24305E;
+  outline: none;
+}
