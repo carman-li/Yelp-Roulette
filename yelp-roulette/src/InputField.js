@@ -3,57 +3,56 @@ import React, {Component} from "react";
 const CORS_URL = 'https://cors-anywhere.herokuapp.com/';
 const YELP_KEY = process.env.REACT_APP_YELP_API_KEY;
 const YELP_URL = `https://api.yelp.com/v3/businesses/search`;
-const IPSTACK_URL = "http://api.ipstack.com/check?access_key=15d1ae7d2dbaaae6f31b2c46a2d3e320";
 
 class InputField extends Component{
     constructor(props) {
         super(props);
 
         this.state = {
-            longitude: "",
-            latitude: "",
+            data:[],
+            total: "",
             search: ""
         }
 
         this.handleChange = this.handleChange.bind(this); // whenever handleChange is invoked, we want the context to be InputField
         this.handleSubmit = this.handleSubmit.bind(this); // whenever handleSubmit is invoked, we want the context to be InputField
+        this.sendData = this.sendData.bind(this);
+    }
+
+    sendData = () => {
+        this.props.callback(this.state.data, this.state.total);
     }
 
     async componentDidMount() {
-        await fetch(IPSTACK_URL)
-        .then (response => response.json())
-        .then (data => {
-            let latitudeFromApi = data.latitude;
-            let longitudeFromApi = data.longitude;
-            this.setState({latitude: latitudeFromApi});
-            this.setState({longitude: longitudeFromApi});
-        })
-        .catch(error => {
-            console.log(`Looks like there was a problem: \n ${error}`);
-        })
-
         let url = new URL(CORS_URL + YELP_URL);
         let params = {
             search: this.state.search,
-            latitude: this.state.latitude,
-            longitude: this.state.longitude
+            latitude: this.props.latitude,
+            longitude: this.props.longitude
         };
         Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
         console.log(url);
 
-        await fetch ((url), {
+        let response = await fetch ((url), {
             method: "GET",
             mode: "cors",
             headers: {
                 Authorization: `Bearer ${YELP_KEY}`
             }
         })
-        .then(response => {
-            console.log(response.json());
-        })
         .catch(error => {
             console.log(`Looks like there was a problem: \n ${error}`);
         })
+
+        let data = await response.json()
+        .catch(error => {
+            console.log(`Looks like there was a problem: \n ${error}`);
+        })
+
+        this.setState({data: data.businesses});
+        this.setState({total: data.total});
+        this.sendData();
+
     }
 
     handleChange = (event) => {
@@ -63,7 +62,6 @@ class InputField extends Component{
     handleSubmit = (event) => {
         event.preventDefault();
         this.setState({[event.target.name]: event.target.value});
-        alert(this.state.search);
         this.componentDidMount();
     }
 
