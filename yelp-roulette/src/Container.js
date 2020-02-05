@@ -11,16 +11,21 @@ class Container extends Component {
         this.state = {
             data: [],
             total: "",
-            longitude: "0",
-            latitude: "0"
+            longitude: 0,
+            latitude: 0,
+            isHidden: true
         }
 
         this.callback = this.callback.bind(this);
+        this.callbackTwo = this.callbackTwo.bind(this);
     }
 
-    callback = (data, total) => {
+    callback = (data) => {
         this.setState({data: data});
-        this.setState({total: total});
+    }
+
+    callbackTwo = (isHidden) => {
+        this.setState({isHidden: isHidden});
     }
 
     async componentDidMount() {
@@ -37,16 +42,15 @@ class Container extends Component {
         })
     }
 
-
     render() {
         return(
             <div className="row">
-            <div className = "col col-4 left">
+            <div className = "col-md-4 left">
                 <h1>welcome to yelp roulette!</h1>
-                <InputField longitude={this.state.longitude} latitude={this.state.latitude} callback={this.callback}/>
+                <InputField isHidden={this.state.isHidden} longitude={this.state.longitude} latitude={this.state.latitude} callback={this.callback} callbackTwo={this.callbackTwo}/>
             </div>
-            <div className="col right">
-                <DisplayCard data={this.state.data} total={this.state.total}/>
+            <div className="col-md-8 right">
+                {!this.state.isHidden && <DisplayCard data={this.state.data}/>}
             </div>
         </div>
         );

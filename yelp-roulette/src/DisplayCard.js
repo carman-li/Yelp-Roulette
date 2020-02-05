@@ -1,7 +1,5 @@
 import React, {Component} from "react";
-import Sidetext from "./SideText";
 import Graphic from "./Graphic";
-import SideText from "./SideText";
 
 class DisplayCard extends Component {
     constructor(props) {
@@ -12,55 +10,42 @@ class DisplayCard extends Component {
             name: "",
             price: "",
             rating: "",
-            category: "",
-            openNow: "",
-            hours: "",
+            category: [],
             website: "",
             image: ""
         }
 
         this.findBusiness = this.findBusiness.bind(this);
-        this.setStates = this.setStates.bind(this);
     }
 
     findBusiness = () => {
-        let total = this.props.total;
-        let data = this.props.data;
-        let num = Math.floor(Math.random() * total) + 1;
-        this.setState({business: data[num]});
+        if(this.props.data) {
+            let data = this.props.data;
+            const num = Math.floor(Math.random() * 50) + 1;
+            let business = data[num];
+            this.setState({business: business});
+        
+            this.setState({name: data[num].name});
+            this.setState({price: data[num].price});
+            this.setState({rating: data[num].rating});
+            this.setState({category: data[num].categories});
+            this.setState({website: data[num].url});
+            this.setState({image: data[num].image_url});
+        }
     }
 
-    setStates = () => {
-        let data = this.props.data;
-    }
-
-    componentDidUpdate(prevProps, prevState) {
+    componentDidUpdate(prevProps) {
         if(prevProps.data !== this.props.data) {
             this.findBusiness();
-            console.log(this.state.business);
-        }
-
-        if(prevState.business !== this.state.business) {
-            this.setStates();
         }
     }
+
     render() {
         return(
-            <div className="container-fluid">
-                {/* <div className="row">
-                    <div className="col">
-                        <h1>hello</h1>
-                    </div>
-                </div>
-                <div className="row">
-                    <div className="col-md-6">
-                        <Graphic />
-                    </div>
-                    <div className = "col-md">
-                        <SideText />
-                    </div>
-                </div> */}
-
+            <div>
+                <h1>{this.state.name}</h1>
+                <Graphic website={this.state.image} category={this.state.category} rating={this.state.rating} price={this.state.price} image={this.state.image}/>
+                <a href={this.state.website} target="blank">yelp link</a>
             </div>
         );
     }

@@ -11,24 +11,38 @@ class InputField extends Component{
         this.state = {
             data:[],
             total: "",
-            search: ""
+            search: "",
+            radius: 5000,
+            limit: 50,
+            offset: 0,
+            isHidden: true
         }
 
         this.handleChange = this.handleChange.bind(this); // whenever handleChange is invoked, we want the context to be InputField
         this.handleSubmit = this.handleSubmit.bind(this); // whenever handleSubmit is invoked, we want the context to be InputField
         this.sendData = this.sendData.bind(this);
+        this.sendHidden = this.sendHidden.bind(this);
     }
 
     sendData = () => {
-        this.props.callback(this.state.data, this.state.total);
+        this.props.callback(this.state.data);
+    }
+
+    sendHidden = () => {
+        this.props.callbackTwo(!this.state.isHidden);
     }
 
     async componentDidMount() {
         let url = new URL(CORS_URL + YELP_URL);
+
+        let offset = Math.floor(Math.random() * 50) + 1;
         let params = {
             search: this.state.search,
             latitude: this.props.latitude,
-            longitude: this.props.longitude
+            longitude: this.props.longitude,
+            radius: this.state.radius,
+            limit: this.state.limit,
+            offset: offset
         };
         Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
         console.log(url);
@@ -49,10 +63,8 @@ class InputField extends Component{
             console.log(`Looks like there was a problem: \n ${error}`);
         })
 
-        this.setState({data: data.businesses});
-        this.setState({total: data.total});
+        this.setState({data: data.businesses})
         this.sendData();
-
     }
 
     handleChange = (event) => {
@@ -63,6 +75,8 @@ class InputField extends Component{
         event.preventDefault();
         this.setState({[event.target.name]: event.target.value});
         this.componentDidMount();
+        this.sendHidden();
+
     }
 
     render() {

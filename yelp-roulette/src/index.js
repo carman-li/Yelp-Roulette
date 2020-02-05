@@ -5,6 +5,8 @@ import Container from "./Container"
 
 ReactDOM.render(
     <div className="container-fluid">
-        <Container />
+        <div className="row">
+            <div className="col"><Container /></div>
+        </div>
     </div>
     , document.getElementById('root'));
