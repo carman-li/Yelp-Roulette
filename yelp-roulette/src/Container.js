@@ -44,13 +44,25 @@ class Container extends Component {
 
     render() {
         return(
+        <div className="container-fluid cont">
             <div className="row">
-            <div className = "col-md-4 left">
-                <h1>welcome to yelp roulette!</h1>
-                <InputField isHidden={this.state.isHidden} longitude={this.state.longitude} latitude={this.state.latitude} callback={this.callback} callbackTwo={this.callbackTwo}/>
+                <div className = "col-md header">
+                    <h1>Welcome to Yelp Roulette!</h1>
+                </div>
             </div>
-            <div className="col-md-8 right">
-                {!this.state.isHidden && <DisplayCard data={this.state.data}/>}
+            <div className = "row">
+                <div className="col-md"></div>
+                <div className = "col-md left">
+                    <InputField isHidden={this.state.isHidden} longitude={this.state.longitude} latitude={this.state.latitude} callback={this.callback} callbackTwo={this.callbackTwo}/>
+                </div>
+                <div className="col-md right">
+                    {this.state.isHidden && 
+                    <div className="card cardStyle">
+                        <h4 className="cardPlaceholder">Restaurant Incoming...</h4>
+                    </div>}
+                    {!this.state.isHidden && <DisplayCard data={this.state.data} />}
+                </div>
+                <div className="col-md"></div>
             </div>
         </div>
         );

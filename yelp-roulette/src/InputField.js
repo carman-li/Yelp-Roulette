@@ -83,10 +83,19 @@ class InputField extends Component{
         return(
             <div>
                 <form onSubmit={this.handleSubmit}>
-                <h3>you are searching for: {this.state.search}</h3>
-                    <input className="field" type="text" name="search" value={this.state.search} onChange={this.handleChange}></input>
-                    <input className="button" type="submit"></input>
+                    <h3>You are searching for: </h3>
+                <h3>{this.state.search}</h3>
+                    <input className="field btn btn-outline-light" type="text" placeholder="i.e. vegan, fries..." name="search" value={this.state.search} onChange={this.handleChange}></input>
+                    <input className="btn btn-outline-light" type="submit"></input>
                 </form>
+
+                <div className = "instructions">
+                    <h5>How to Use Yelp Roulette:</h5>
+                    <ol>
+                        <li>OPTIONAL: Enter a word (or a few) in the field above for inspiration.</li>
+                        <li>Hit submit and wait for Roulette to do its magic!</li>
+                    </ol>
+                </div>
             </div>
         );
     }
