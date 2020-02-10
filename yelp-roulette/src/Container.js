@@ -2,7 +2,7 @@ import React, {Component} from "react";
 import InputField from "./InputField";
 import DisplayCard from "./DisplayCard"
 
-const IPSTACK_URL = "https://api.ipstack.com/check?access_key=15d1ae7d2dbaaae6f31b2c46a2d3e320";
+const IPSTACK_URL = "http://api.ipstack.com/check?access_key=15d1ae7d2dbaaae6f31b2c46a2d3e320";
 
 class Container extends Component {
     constructor(props) {
@@ -29,7 +29,9 @@ class Container extends Component {
     }
 
     async componentDidMount() {
-        await fetch(IPSTACK_URL)
+        await fetch(IPSTACK_URL, {
+            use_https: false
+        })
         .then (response => response.json())
         .then (data => {
             let latitudeFromApi = data.latitude;
