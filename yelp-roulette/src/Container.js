@@ -47,7 +47,7 @@ class Container extends Component {
         <div className="container-fluid cont">
             <div className="row">
                 <div className = "col-md header">
-                    <h1>Welcome to Yelp Roulette!</h1>
+                    <h1>Welcome to Yelp Roulette!<span role="img" aria-label="croissant">🌮</span></h1>
                 </div>
             </div>
             <div className = "row">
