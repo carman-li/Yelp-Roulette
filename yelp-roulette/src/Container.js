@@ -17,7 +17,7 @@ class Container extends Component {
         }
 
         this.callback = this.callback.bind(this);
-        this.callbackTwo = this.callbackTwo.bind(this);
+        this.callbackTwo = this.callbackTwo.bind(this)n;
     }
 
     callback = (data) => {
@@ -29,9 +29,7 @@ class Container extends Component {
     }
 
     async componentDidMount() {
-        await fetch(IPSTACK_URL, {
-            use_https: false
-        })
+        await fetch(IPSTACK_URL)
         .then (response => response.json())
         .then (data => {
             let latitudeFromApi = data.latitude;
