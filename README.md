@@ -2,3 +2,5 @@
 # yelp-roulette
 
 A tool that randomly selects a restaurant for you based on your current location and an (optional) search term. *NOTE: good food not always guaranteed.*
+
+View it here: https://carman-li.github.io/yelp-roulette/
