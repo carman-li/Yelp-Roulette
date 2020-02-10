@@ -17,7 +17,6 @@ class StarRating extends Component {
     componentDidUpdate(prevProps) {
         if (prevProps.rating !== this.props.rating) {
             let rating = this.props.rating;
-            console.log("og" + rating + "\n");
             let array = [];
             var isHalf = false;
 
@@ -31,7 +30,6 @@ class StarRating extends Component {
                 }
 
                 rating = 5 - rating;
-                console.log("new" + rating);
                 for (var k = 0; k < rating; ++k) {
                     array.push(<Star className={this.state.empty} key={rating + k}/>);
                 }

@@ -45,7 +45,6 @@ class InputField extends Component{
             offset: offset
         };
         Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
-        console.log(url);
 
         let response = await fetch ((url), {
             method: "GET",

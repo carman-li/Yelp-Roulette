@@ -2,7 +2,7 @@ import React, {Component} from "react";
 import InputField from "./InputField";
 import DisplayCard from "./DisplayCard"
 
-const IPSTACK_URL = "http://api.ipstack.com/check?access_key=15d1ae7d2dbaaae6f31b2c46a2d3e320";
+const IPSTACK_URL = "https://api.ipstack.com/check?access_key=15d1ae7d2dbaaae6f31b2c46a2d3e320";
 
 class Container extends Component {
     constructor(props) {
@@ -47,7 +47,7 @@ class Container extends Component {
         <div className="container-fluid cont">
             <div className="row">
                 <div className = "col-md header">
-                    <h1>Welcome to Yelp Roulette!<span role="img" aria-label="croissant">🌮</span></h1>
+                    <h1>Welcome to Yelp Roulette!<span role="img" aria-label="taco">🌮</span></h1>
                 </div>
             </div>
             <div className = "row">
