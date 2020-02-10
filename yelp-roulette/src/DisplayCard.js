@@ -53,7 +53,7 @@ class DisplayCard extends Component {
                 <div className="card-body">
                     <h4 className="card-title">{this.state.name}</h4>
                     <StarRating rating={this.state.rating}/>
-                    <p className="card-heading">{this.state.price} - {this.state.categoryOne}, {this.state.categoryTwo}</p>
+                    <p className="card-heading">{this.state.price} - {this.state.categoryOne} ~ {this.state.categoryTwo}</p>
                     <a href={this.state.website} className="btn btn-outline-light stretched-link" target="blank">View on Yelp!</a>
                 </div>
             </div>
