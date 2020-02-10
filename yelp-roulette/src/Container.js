@@ -17,7 +17,7 @@ class Container extends Component {
         }
 
         this.callback = this.callback.bind(this);
-        this.callbackTwo = this.callbackTwo.bind(this)n;
+        this.callbackTwo = this.callbackTwo.bind(this);
     }
 
     callback = (data) => {
