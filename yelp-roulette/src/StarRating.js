@@ -41,7 +41,6 @@ class StarRating extends Component {
                 }
 
                 rating = 5 - (rating + 0.5);
-                console.log("new" + rating);
                 for (var q = 1; q <= rating; ++q) {
                     array.push(<Star className={this.state.empty} key={rating + q}/>);
                 }
