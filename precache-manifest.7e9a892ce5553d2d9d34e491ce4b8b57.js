@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "4eb4267871ca1122e6b82286312757e5",
+    "revision": "39ffae656a82d50a67666092941c97cf",
     "url": "/yelp-roulette/index.html"
   },
   {
-    "revision": "7e8f23d5e011a5d4cafb",
+    "revision": "0180f8c5ce73cea2a46b",
     "url": "/yelp-roulette/static/css/main.db2e37d7.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/yelp-roulette/static/js/2.40dfef02.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "7e8f23d5e011a5d4cafb",
-    "url": "/yelp-roulette/static/js/main.7c4fa967.chunk.js"
+    "revision": "0180f8c5ce73cea2a46b",
+    "url": "/yelp-roulette/static/js/main.c43c89b6.chunk.js"
   },
   {
     "revision": "92a47352e01fd34d887b",
