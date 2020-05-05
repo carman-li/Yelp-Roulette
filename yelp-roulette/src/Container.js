@@ -2,7 +2,8 @@ import React, { Component } from "react";
 import InputField from "./InputField";
 import DisplayCard from "./DisplayCard";
 
-const IP_URL = "http://ip-api.com/json/";
+const IP_URL =
+  "https://api.ipdata.co/?api-key=e34d6e979258f05e6678a6e563a0eb5076f2a7c8fbc26327215ec385";
 
 class Container extends Component {
   constructor(props) {
@@ -32,8 +33,8 @@ class Container extends Component {
     await fetch(IP_URL)
       .then((response) => response.json())
       .then((data) => {
-        let latitudeFromApi = data.lat;
-        let longitudeFromApi = data.lon;
+        let latitudeFromApi = data.latitude;
+        let longitudeFromApi = data.longitude;
         this.setState({ latitude: latitudeFromApi });
         this.setState({ longitude: longitudeFromApi });
       })
