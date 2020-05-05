@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import InputField from "./InputField";
 import DisplayCard from "./DisplayCard";
 
-const IP_URL = "http://ip-api.com/json";
+const IP_URL = "http://ip-api.com/json/";
 
 class Container extends Component {
   constructor(props) {
