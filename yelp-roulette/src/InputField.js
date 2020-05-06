@@ -106,7 +106,7 @@ class InputField extends Component {
               OPTIONAL: Enter a word (or a few) in the field above for
               inspiration.
             </li>
-            <li>Hit submit and wait for Roulette to do its magic!</li>
+            <li>Hit spin and wait for Roulette to do its magic!</li>
           </ol>
         </div>
       </div>
