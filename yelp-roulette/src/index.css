@@ -1,51 +1,47 @@
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
   color: white;
   overflow-x: hidden;
-  background-color: #24305E;
+  background-color: #24305e;
 }
 
-.row .col {
-  min-height: 100vh;
-  max-height: 100vh;
+.col {
+  padding: 0;
 }
 
 .left {
-  padding: 3vw;
-  /* text-align: center; */
-  background-color: #24305E;
-  min-height: 100vh;
+  padding: 0 3vw;
+  background-color: #24305e;
+  min-height: 60vh;
   display: flex;
-  align-items: center;
   justify-content: center;
   flex-flow: column;
-}
-
-.cont {
-  align-items: center;
 }
 
 .header {
   padding-top: 3vw;
   text-align: center;
-  position: absolute;
   top: 0;
-  z-index: 1;
 }
 
 .right {
+  padding: 0 3vw;
+  min-height: 70vh;
+  min-width: 40vw;
   display: flex;
-  align-items: center;
   justify-content: center;
   flex-flow: column;
-  padding: 3vw;
 }
 
 .cardStyle {
   margin-top: 3vw;
-  width: 30vw;
-  height: 75vh;
-  background-color: #A8D0E6;
+  background-color: #a8d0e6;
+}
+
+.cardPlaceholder {
+  text-align: center;
 }
 
 .card-heading {
@@ -63,7 +59,7 @@ body {
 }
 
 .full {
-  color: #24305E;
+  color: #24305e;
 }
 
 .empty {
@@ -71,28 +67,22 @@ body {
 }
 
 .half {
-  background: linear-gradient(90deg, #24305E 50%, white 50%);
+  background: linear-gradient(90deg, #24305e 50%, white 50%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-.cardPlaceholder {
-  display: flex;
-  align-items: center;
-  flex-flow: column;
-  margin-top: 10em;
-}
-
 img {
   max-width: 50em;
-  max-height: 30em;
-  padding: 2vw;
+  max-height: 20em;
+  padding: 0.5vw;
   object-fit: cover;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
 }
 
 h1 {
@@ -107,7 +97,9 @@ h3 {
 }
 
 input {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
   margin-bottom: 0.5em;
   margin-right: 0.5em;
 }
@@ -118,7 +110,7 @@ a {
 }
 
 a:hover {
-  color: #A8D0E6;
+  color: #a8d0e6;
   text-decoration: none;
 }
 
@@ -132,13 +124,36 @@ a:hover {
   border: 2px solid white;
 }
 
-.field:hover, .field:focus {
-  border: 2px solid #A8D0E6;
+.field:hover,
+.field:focus {
+  border: 2px solid #a8d0e6;
   outline: none;
 }
 
-.button:hover, .button:focus {
-  border: 2px solid #A8D0E6;
-  color: #A8D0E6;
+.button:hover,
+.button:focus {
+  border: 2px solid #a8d0e6;
+  color: #a8d0e6;
   outline: none;
+}
+
+@media only screen and (max-width: 640px) {
+  body {
+    padding: 0;
+    margin: 0;
+    max-width: 100vw;
+  }
+
+  .header {
+    padding: 5vw;
+  }
+
+  form {
+    text-align: center;
+  }
+
+  h3 {
+    font-size: 1.25rem;
+    text-align: center;
+  }
 }

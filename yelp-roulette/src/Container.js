@@ -45,9 +45,9 @@ class Container extends Component {
 
   render() {
     return (
-      <div className="container-fluid cont">
+      <div className="container-fluid">
         <div className="row">
-          <div className="col-md header">
+          <div className="col-sm header">
             <h1>
               Welcome to Yelp Roulette!
               <span role="img" aria-label="taco">
@@ -57,8 +57,8 @@ class Container extends Component {
           </div>
         </div>
         <div className="row">
-          <div className="col-md"></div>
-          <div className="col-md left">
+          <div className="col-sm"></div>
+          <div className="col-sm left">
             <InputField
               isHidden={this.state.isHidden}
               longitude={this.state.longitude}
@@ -67,17 +67,17 @@ class Container extends Component {
               callbackTwo={this.callbackTwo}
             />
           </div>
-          <div className="col-md right">
+          <div className="col-sm right">
             {this.state.isHidden && (
-              <div className="card cardStyle">
+              <div>
                 <h3 className="cardPlaceholder">
-                  Hit the spin button to find your next meal!
+                  What's for dinner? Take a spin.
                 </h3>
               </div>
             )}
             {!this.state.isHidden && <DisplayCard data={this.state.data} />}
           </div>
-          <div className="col-md"></div>
+          <div className="col-sm"></div>
         </div>
       </div>
     );

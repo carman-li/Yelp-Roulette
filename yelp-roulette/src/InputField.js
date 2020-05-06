@@ -12,7 +12,7 @@ class InputField extends Component {
       data: [],
       total: "",
       search: "",
-      radius: 5000,
+      radius: 10000,
       limit: 50,
       offset: 0,
       isHidden: true,
@@ -87,6 +87,7 @@ class InputField extends Component {
             className="field btn btn-outline-light"
             type="text"
             placeholder="i.e. vegan, fries..."
+            maxLength="30"
             name="search"
             value={this.state.search}
             onChange={this.handleChange}
