@@ -42,7 +42,7 @@ class StarRating extends Component {
         array.push(<Star className={this.state.half} key="halfstar" />);
 
         rating = 5 - (rating + 0.5);
-        for (var q = 1; q <= rating; ++q) {
+        for (var q = 1; q < rating; ++q) {
           array.push(<Star className={this.state.empty} key={rating + q} />);
         }
       }

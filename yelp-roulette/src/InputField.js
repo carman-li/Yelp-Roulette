@@ -91,11 +91,15 @@ class InputField extends Component {
             value={this.state.search}
             onChange={this.handleChange}
           ></input>
-          <input className="btn btn-outline-light" type="submit"></input>
+          <input
+            className="btn btn-outline-light"
+            type="submit"
+            value="Spin"
+          ></input>
         </form>
 
         <div className="instructions">
-          <h5>How to Use Yelp Roulette:</h5>
+          <h3>How to Use Yelp Roulette:</h3>
           <ol>
             <li>
               OPTIONAL: Enter a word (or a few) in the field above for

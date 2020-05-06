@@ -70,7 +70,9 @@ class Container extends Component {
           <div className="col-md right">
             {this.state.isHidden && (
               <div className="card cardStyle">
-                <h4 className="cardPlaceholder">Restaurant Incoming...</h4>
+                <h3 className="cardPlaceholder">
+                  Hit the spin button to find your next meal!
+                </h3>
               </div>
             )}
             {!this.state.isHidden && <DisplayCard data={this.state.data} />}
