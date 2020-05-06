@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/yelp-roulette/static/css/main.a65799b7.chunk.css",
-    "main.js": "/yelp-roulette/static/js/main.8de1ee61.chunk.js",
-    "main.js.map": "/yelp-roulette/static/js/main.8de1ee61.chunk.js.map",
+    "main.js": "/yelp-roulette/static/js/main.c0c18bc8.chunk.js",
+    "main.js.map": "/yelp-roulette/static/js/main.c0c18bc8.chunk.js.map",
     "runtime-main.js": "/yelp-roulette/static/js/runtime-main.543c0195.js",
     "runtime-main.js.map": "/yelp-roulette/static/js/runtime-main.543c0195.js.map",
     "static/js/2.40dfef02.chunk.js": "/yelp-roulette/static/js/2.40dfef02.chunk.js",
     "static/js/2.40dfef02.chunk.js.map": "/yelp-roulette/static/js/2.40dfef02.chunk.js.map",
     "index.html": "/yelp-roulette/index.html",
-    "precache-manifest.11ccc5be89e929c5134c6c674827cc65.js": "/yelp-roulette/precache-manifest.11ccc5be89e929c5134c6c674827cc65.js",
+    "precache-manifest.4618ab6e4e344ec939fb5c7b7c2fa634.js": "/yelp-roulette/precache-manifest.4618ab6e4e344ec939fb5c7b7c2fa634.js",
     "service-worker.js": "/yelp-roulette/service-worker.js",
     "static/css/main.a65799b7.chunk.css.map": "/yelp-roulette/static/css/main.a65799b7.chunk.css.map",
     "static/js/2.40dfef02.chunk.js.LICENSE.txt": "/yelp-roulette/static/js/2.40dfef02.chunk.js.LICENSE.txt"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.543c0195.js",
     "static/js/2.40dfef02.chunk.js",
     "static/css/main.a65799b7.chunk.css",
-    "static/js/main.8de1ee61.chunk.js"
+    "static/js/main.c0c18bc8.chunk.js"
   ]
 }
